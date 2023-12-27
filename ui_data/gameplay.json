@@ -1,0 +1,120 @@
+{
+  "leftpad": {
+    "base_data": {
+      "name": "leftpad",
+      "group": "gameplay",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "x_pos": 0,
+      "y_pos": 9,
+      "x_size": 1,
+      "y_size": 4
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_25",
+      "text": "",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "center"
+    },
+    "obj_data": {
+      "color": "#ffffff"
+    }
+  },
+  "rightpad": {
+    "base_data": {
+      "name": "rightpad",
+      "group": "gameplay",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "x_pos": 31,
+      "y_pos": 9,
+      "x_size": 1,
+      "y_size": 4
+    },
+    "event_data": {
+      "pong_events:hold_pad_up": { "event": "down_up", "args": [] },
+      "pong_events:release_pad_up": { "event": "up_up", "args": [] },
+      "pong_events:hold_pad_down": { "event": "down_down", "args": [] },
+      "pong_events:release_pad_down": { "event": "up_down", "args": [] }
+    },
+    "text_data": {
+      "font": "pixal_25",
+      "text": "",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "center"
+    },
+    "obj_data": {
+      "color": "#ffffff"
+    }
+  },
+  "return": {
+    "base_data": {
+      "name": "return",
+      "group": "gameplay",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "x_pos": 28,
+      "y_pos": 1,
+      "x_size": 3,
+      "y_size": 1
+    },
+    "event_data": {
+      "pong_events:back_to_menu": { "event": "leftclick", "args": [] }
+    },
+    "text_data": {
+      "font": "pixal_25",
+      "text": "Return",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#cccccc",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000"
+    }
+  },
+  "ball": {
+    "base_data": {
+      "name": "ball",
+      "group": "gameplay",
+      "class": "PyCircle"
+    },
+    "rect_data": {
+      "x_pos": 16,
+      "y_pos": 9
+    },
+    "event_data": {
+      "pong_events:left_ball_collision": {
+        "event": "rectin",
+        "params": "leftpad",
+        "args": []
+      },
+      "pong_events:right_ball_collision": {
+        "event": "rectin",
+        "params": "rightpad",
+        "args": []
+      }
+    },
+    "text_data": {
+      "font": "pixal_35",
+      "text": "",
+      "antialias": false,
+      "color": "#000000",
+      "align": "center"
+    },
+    "obj_data": {
+      "color": "#FF0000",
+      "radius": 12.0
+    }
+  }
+}

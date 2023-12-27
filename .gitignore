@@ -1,0 +1,17 @@
+# tmp files
+*.swp
+.vscode/
+temp.py
+
+# Python ignore
+*.pyc
+
+#linux ignore
+*.sh
+
+#my ignore
+Planning/
+GamePublish/
+*.spec
+key
+pseudo/

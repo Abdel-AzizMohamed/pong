@@ -1,0 +1,143 @@
+{
+  "background": {
+    "base_data": {
+      "name": "background",
+      "group": "global",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "x_pos": 0,
+      "y_pos": 0,
+      "x_size": 32,
+      "y_size": 18
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_35",
+      "text": "",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "top"
+    },
+    "obj_data": {
+      "color": "#333333"
+    }
+  },
+  "game_text": {
+    "base_data": {
+      "name": "game_text",
+      "group": "mainmenu",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "x_pos": 13,
+      "y_pos": 4,
+      "x_size": 5,
+      "y_size": 2
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_120",
+      "text": "Pong",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "center"
+    },
+    "obj_data": {
+      "color": "#333333"
+    }
+  },
+  "vsbot": {
+    "base_data": {
+      "name": "vsbot",
+      "group": "mainmenu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "x_pos": 12,
+      "y_pos": 9,
+      "x_size": 3,
+      "y_size": 1
+    },
+    "event_data": {
+      "pong_events:start_game": { "event": "leftclick", "args": ["bot"] }
+    },
+    "text_data": {
+      "font": "pixal_25",
+      "text": "Vs Bot",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#cccccc",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000"
+    }
+  },
+  "vsplayer": {
+    "base_data": {
+      "name": "vsplayer",
+      "group": "mainmenu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "x_pos": 16,
+      "y_pos": 9,
+      "x_size": 3,
+      "y_size": 1
+    },
+    "event_data": {
+      "pong_events:start_game": { "event": "leftclick", "args": ["player"] }
+    },
+    "text_data": {
+      "font": "pixal_25",
+      "text": "Vs Player",
+      "antialias": false,
+      "color": "#333333",
+      "align": "center"
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#ffffff",
+      "hover_color": "#cccccc",
+      "select_color": "#aaaaaa",
+      "disabled_color": "#000000"
+    }
+  },
+  "exit": {
+    "base_data": {
+      "name": "exit",
+      "group": "mainmenu",
+      "class": "PyButton"
+    },
+    "rect_data": {
+      "x_pos": 28,
+      "y_pos": 1,
+      "x_size": 3,
+      "y_size": 1
+    },
+    "event_data": {
+      "pong_events:exit_game": { "event": "leftclick", "args": [] }
+    },
+    "text_data": {
+      "font": "pixal_25",
+      "text": "Exit",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "center"
+    },
+    "obj_data": {
+      "active": false,
+      "disabled": false,
+      "base_color": "#cc281e",
+      "hover_color": "#c12319",
+      "select_color": "#b01d14",
+      "disabled_color": "#000000"
+    }
+  }
+}

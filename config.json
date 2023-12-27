@@ -1,0 +1,31 @@
+{
+  "window_data": {
+    "window_size": [0, 0],
+    "grid_precision_level": 2,
+    "fps": 60,
+    "window_title": "Pong"
+  },
+  "fonts_data": {
+    "pixal_120": { "font_path": "fonts/Pixeltype.ttf", "font_size": 120 },
+    "pixal_35": { "font_path": "fonts/Pixeltype.ttf", "font_size": 35 },
+    "pixal_25": { "font_path": "fonts/Pixeltype.ttf", "font_size": 25 }
+  },
+  "devtools_data": {
+    "grid_color": "#ffffff",
+    "fps_font": "pixal_35",
+    "fps_antialias": false,
+    "fps_color": "#ffffff",
+    "fps_align": "topright",
+    "object_rect_color": "#ff0000",
+    "object_rect_size": 1
+  },
+  "events_data": {
+    "pong_events:ball_movement": { "event": "none", "args": ["ball"] },
+    "pong_events:player_movement": { "event": "none", "args": [] }
+  },
+  "sounds_data": {
+    "pong": { "sound_path": "sounds/pong.ogg", "sound_volume": 0.3 },
+    "score": { "sound_path": "sounds/score.ogg", "sound_volume": 0.3 }
+  },
+  "music_data": {}
+}
