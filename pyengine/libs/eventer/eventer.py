@@ -5,7 +5,7 @@ import pygame
 
 # pylint: disable=E1101
 #### My Packages ####
-from pyengine.utils.collision_handler import mouse_collision, object_collision
+from pyengine.utils.collision_handler import mouse_collision
 
 
 class Eventer:
@@ -53,7 +53,7 @@ class Eventer:
             )
 
     @staticmethod
-    def load_global_events(events: dict) -> list:
+    def load_global_events(events: dict, element_grabber: object) -> list:
         """
         Load global events from config file
 
@@ -75,10 +75,14 @@ class Eventer:
             else:
                 module_function = getattr(import_module(module_path), function_path)
 
-            if data.get("event") != "none":
-                Eventer.global_events.append((module_function, data))
-            else:
+            if data.get("event") == "none":
                 non_events.append((module_function, data))
+            elif data.get("event") == "rectin":
+                data["args"][0] = element_grabber(data["args"][0])
+                data["args"][1] = element_grabber(data["args"][1])
+                non_events.append((module_function, data))
+            else:
+                Eventer.global_events.append((module_function, data))
 
         return non_events
 
@@ -107,8 +111,6 @@ class Eventer:
             params = element[1].get("params")
             rect = element[2].rect
 
-            if object_collision(rect, params) and event_type == "rectin":
-                function(*args)
             if not mouse_collision(rect) and event_type == "mouseout":
                 function(*args)
             if mouse_collision(rect) and event_type == "mousein":

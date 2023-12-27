@@ -7,6 +7,7 @@
   },
   "fonts_data": {
     "pixal_120": { "font_path": "fonts/Pixeltype.ttf", "font_size": 120 },
+    "pixal_50": { "font_path": "fonts/Pixeltype.ttf", "font_size": 50 },
     "pixal_35": { "font_path": "fonts/Pixeltype.ttf", "font_size": 35 },
     "pixal_25": { "font_path": "fonts/Pixeltype.ttf", "font_size": 25 }
   },
@@ -20,8 +21,18 @@
     "object_rect_size": 1
   },
   "events_data": {
+    "pong_events:set_score": { "event": "none", "args": [] },
+    "pong_events:ai_movement": { "event": "none", "args": [] },
     "pong_events:ball_movement": { "event": "none", "args": ["ball"] },
-    "pong_events:player_movement": { "event": "none", "args": [] }
+    "pong_events:player_movement": { "event": "none", "args": [] },
+    "pong_events:left_ball_collision": {
+      "event": "rectin",
+      "args": ["ball", "leftpad"]
+    },
+    "pong_events:right_ball_collision": {
+      "event": "rectin",
+      "args": ["ball", "rightpad"]
+    }
   },
   "sounds_data": {
     "pong": { "sound_path": "sounds/pong.ogg", "sound_volume": 0.3 },

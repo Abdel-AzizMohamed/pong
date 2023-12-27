@@ -14,8 +14,9 @@ from pyengine.libs.devtools.debug_tools import Debugger
 from pyengine.libs.mixer import Sound, Music
 
 from pyengine.utils.json_handler import read_json
+from pyengine.utils.collision_handler import object_collision
+from pyengine.utils.path_handler import walk_search
 
-# from pyengine.utils.path_handler import walk_search
 # from pyengine.utils.errors_handler.data_checker import config_check, ui_check
 
 
@@ -37,8 +38,15 @@ class PyEngine:
 
             for global_event in PyEngine.non_events:
                 function = global_event[0]
+                event_type = global_event[1].get("event")
                 args = global_event[1].get("args").copy()
-                function(*args)
+                if event_type == "rectin":
+                    rect_1 = args.pop(0)
+                    rect_2 = args.pop(0)
+                    if object_collision(rect_1, rect_2):
+                        function(*args)
+                else:
+                    function(*args)
 
             Designer.draw_groups()
             if debug:
@@ -84,6 +92,12 @@ class PyEngine:
 
         Text.load_fonts(fonts_data)
         Debugger.load_debugger_config(devtools_data)
-        PyEngine.non_events = Eventer.load_global_events(events_data)
         Sound.load_sounds(sounds_data)
         Music.load_music(music_data)
+
+        for file in walk_search("ui_data"):
+            Designer.create_from_file(file)
+
+        PyEngine.non_events = Eventer.load_global_events(
+            events_data, Designer.get_element
+        )

@@ -43,7 +43,6 @@ class Designer:
         for data in event_data.values():
             if data.get("params"):
                 data["params"] = Designer.get_element(data["params"])
-                print(data["params"].name)
 
         element = Designer.elements_classes[ele_class](element_attributes)
 

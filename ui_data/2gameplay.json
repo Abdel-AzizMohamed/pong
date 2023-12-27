@@ -11,7 +11,12 @@
       "x_size": 1,
       "y_size": 4
     },
-    "event_data": {},
+    "event_data": {
+      "pong_events:hold_pad_up": { "event": "down_w", "args": [] },
+      "pong_events:release_pad_up": { "event": "up_w", "args": [] },
+      "pong_events:hold_pad_down": { "event": "down_s", "args": [] },
+      "pong_events:release_pad_down": { "event": "up_s", "args": [] }
+    },
     "text_data": {
       "font": "pixal_25",
       "text": "",
@@ -83,6 +88,54 @@
       "disabled_color": "#000000"
     }
   },
+  "right_score": {
+    "base_data": {
+      "name": "right_score",
+      "group": "gameplay",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "x_pos": 14,
+      "y_pos": 1,
+      "x_size": 1,
+      "y_size": 1
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_50",
+      "text": "0",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "center"
+    },
+    "obj_data": {
+      "color": "#333333"
+    }
+  },
+  "left_score": {
+    "base_data": {
+      "name": "left_score",
+      "group": "gameplay",
+      "class": "PyRect"
+    },
+    "rect_data": {
+      "x_pos": 16,
+      "y_pos": 1,
+      "x_size": 1,
+      "y_size": 1
+    },
+    "event_data": {},
+    "text_data": {
+      "font": "pixal_50",
+      "text": "1",
+      "antialias": false,
+      "color": "#ffffff",
+      "align": "center"
+    },
+    "obj_data": {
+      "color": "#333333"
+    }
+  },
   "ball": {
     "base_data": {
       "name": "ball",
@@ -93,18 +146,7 @@
       "x_pos": 16,
       "y_pos": 9
     },
-    "event_data": {
-      "pong_events:left_ball_collision": {
-        "event": "rectin",
-        "params": "leftpad",
-        "args": []
-      },
-      "pong_events:right_ball_collision": {
-        "event": "rectin",
-        "params": "rightpad",
-        "args": []
-      }
-    },
+    "event_data": {},
     "text_data": {
       "font": "pixal_35",
       "text": "",

@@ -18,17 +18,12 @@ def mouse_collision(rect: pygame.Rect) -> bool:
     return False
 
 
-def object_collision(rect: pygame.Rect, other: object) -> bool:
+def object_collision(first_object: object, other_object: object) -> bool:
     """
     Check if the given rect collision another rect
 
     Arguments:
-        rect: rect to check collision with
-        other: other rect to check collision with
+        first_object: first object to check collision
+        other_object: other object to check collision with first
     """
-    if other is None:
-        return False
-
-    if rect.colliderect(other.rect):
-        return True
-    return False
+    return first_object.rect.colliderect(other_object.rect)
